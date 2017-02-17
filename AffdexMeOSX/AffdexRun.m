@@ -33,6 +33,7 @@
     }
 #endif
     
+    totalFiles += 1.0;
     if (nil == faces)
     {
         [self unprocessedImageReady:detector image:image atTime:time];
@@ -42,6 +43,11 @@
         [self processedImageReady:detector image:image faces:faces atTime:time];
     }
 }
+NSString* emotion;
+float totalFiles;
+NSInteger* percentAccuracy;
+float accurateFiles;
+BOOL isOver;
 
 - (void)detector:(AFDXDetector *)detector didStartDetectingFace:(AFDXFace *)face;
 {
@@ -75,12 +81,40 @@
 // Convenience method to work with processed images.
 - (void)processedImageReady:(AFDXDetector *)detector image:(NSImage *)image faces:(NSDictionary *)faces atTime:(NSTimeInterval)time;
 {
-    for (AFDXFace *face in [faces allValues])
-    {
-        if (isnan(face.emotions.joy) == NO)
-        {
-            printf("%f", face.emotions.joy);
+        AFDXFace *face = [faces allValues][0];
+        CGFloat* pArray = (CGFloat*)malloc(8 * sizeof(CGFloat));
+        pArray[0] = face.emotions.joy;
+        pArray[1] = face.emotions.anger;
+       pArray[2] = face.emotions.sadness;
+       pArray[3] = face.emotions.fear;
+    pArray[4] = face.emotions.surprise;
+    pArray[5] = face.emotions.contempt;
+    pArray[6] = face.emotions.disgust;
+    float emotionScore = pArray[0];
+    NSArray *emotionArray = @[
+                              @"joy",
+                              @"anger",
+                              @"sadness",
+                              @"fear",
+                              @"surprise",
+                              @"contempt",
+                              @"disgust"];
+    NSString *emot = @"joy";
+    for (int i = 1; i < 7; i++) {
+        if (pArray[i] > emotionScore) {
+            emotionScore = pArray[i];
+            emot = emotionArray[i];
         }
+    }
+    if (emotionScore <= 20) {
+        emot = @"neutral";
+    }
+    if ([emot isEqualToString: emotion]) {
+        accurateFiles += 1.0;
+    }
+    if (isOver) {
+        float value = accurateFiles/totalFiles;
+        printf("Value is %f", value);
     }
 }
 
@@ -104,6 +138,8 @@
      [self.detector setDetectAllEmotions:YES];
      [self.detector setDetectAllExpressions:YES];
      [self.detector setDetectEmojis:YES];
+     self.detector.maxProcessRate = 35;
+     isOver = false;
      NSError *error = [self.detector start];
      NSArray *emotionArray = @[
                           @"contempt",
@@ -114,8 +150,8 @@
                           @"happy",
                           @"sadness",
                           @"surprise"];
-    
     for (NSString* currentString in emotionArray) {
+      emotion = currentString;
       NSString* currPath = [@"/Users/manavdutta1/Downloads/kf/raw_images/" stringByAppendingString:currentString];
       NSArray* dirs = [[NSFileManager defaultManager] contentsOfDirectoryAtPath: currPath error:NULL];
       NSMutableArray *imageFiles = [[NSMutableArray alloc] init];
@@ -126,10 +162,16 @@
              [imageFiles addObject:[currPath stringByAppendingPathComponent:filename]];
          }
       }];
-    for (NSString * filename in imageFiles) {
-           NSImage *image = [[NSImage alloc]initWithContentsOfFile:filename];
-          [self.detector processImage:image];
-       }
+        NSInteger currentIndex = 0;
+        NSInteger currLength = [imageFiles count];
+        for (NSString * filename in imageFiles) {
+             NSImage *image = [[NSImage alloc]initWithContentsOfFile:filename];
+            [self.detector processImage:image];
+            currentIndex += 1;
+            if ([emotion isEqualToString: @"surprise"] && currentIndex == currLength) {
+                isOver = true;
+            }
+        }
     }
        
     

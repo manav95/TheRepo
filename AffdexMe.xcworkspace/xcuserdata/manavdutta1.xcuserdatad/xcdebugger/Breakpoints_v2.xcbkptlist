@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AffdexMeOSX/AffdexRun.m"
-            timestampString = "508733716.144519"
+            timestampString = "508996231.716177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "-startDetector"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AffdexMeOSX/AffdexRun.m"
-            timestampString = "508733716.144519"
+            timestampString = "508996231.716177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "-startDetector"
             landmarkType = "5">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AffdexMeOSX/AffdexRun.m"
-            timestampString = "508733716.144519"
+            timestampString = "508996231.716177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "-startDetector"
             landmarkType = "5">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AffdexMeOSX/AffdexRun.m"
-            timestampString = "508733716.144519"
+            timestampString = "508996231.716177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "-startDetector"
             landmarkType = "5">
          </BreakpointContent>
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AffdexMeOSX/AffdexRun.m"
-            timestampString = "508733775.18711"
+            timestampString = "508996231.716177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "-detector:hasResults:forImage:atTime:"
             landmarkType = "5">
          </BreakpointContent>
@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AffdexMeOSX/AffdexRun.m"
-            timestampString = "508733779.45554"
+            timestampString = "508996231.716177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "-detector:hasResults:forImage:atTime:"
             landmarkType = "5">
          </BreakpointContent>
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AffdexMeOSX/AffdexRun.m"
-            timestampString = "508733792.935954"
+            timestampString = "508996231.716177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "-processedImageReady:image:faces:atTime:"
             landmarkType = "5">
             <Locations>
@@ -282,11 +282,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AffdexMeOSX/AffdexRun.m"
-            timestampString = "508733856.656366"
+            timestampString = "508996231.716177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "-processedImageReady:image:faces:atTime:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AffdexMeOSX/AffdexRun.m"
+            timestampString = "508996231.716177"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "-processedImageReady:image:faces:atTime:"
             landmarkType = "5">
          </BreakpointContent>
